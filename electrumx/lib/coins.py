@@ -1229,13 +1229,6 @@ class Dash(Coin):
     DAEMON = daemon.DashDaemon
     DESERIALIZER = lib_tx_dash.DeserializerDash
 
-    @classmethod
-    def header_hash(cls, header):
-        '''Given a header return the hash.'''
-        import x11_hash
-        return x11_hash.getPoWHash(header)
-
-
 class DashTestnet(Dash):
     NAME = "Dash"
     SHORTNAME = "tDASH"
