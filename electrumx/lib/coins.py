@@ -1249,7 +1249,12 @@ class DashTestnet(Dash):
         'electrum.dash.siampm.com s t',
         'dasht.random.re s54002 t54001',
     ]
-
+    
+    @classmethod
+    def header_hash(cls, header):
+        '''Given a header return the hash.'''
+        import x11_hash
+        return x11_hash.getPoWHash(header)
 
 class DashRegtest(DashTestnet):
     NAME = "Dash"
