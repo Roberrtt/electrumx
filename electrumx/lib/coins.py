@@ -1228,6 +1228,12 @@ class Dash(Coin):
     SESSIONCLS = DashElectrumX
     DAEMON = daemon.DashDaemon
     DESERIALIZER = lib_tx_dash.DeserializerDash
+    
+    @classmethod
+    def header_hash(cls, header):
+        '''Given a header return the hash.'''
+        import x11_hash
+        return x11_hash.getPoWHash(header)
 
 class DashTestnet(Dash):
     NAME = "Dash"
@@ -1250,11 +1256,6 @@ class DashTestnet(Dash):
         'dasht.random.re s54002 t54001',
     ]
     
-    @classmethod
-    def header_hash(cls, header):
-        '''Given a header return the hash.'''
-        import x11_hash
-        return x11_hash.getPoWHash(header)
 
 class DashRegtest(DashTestnet):
     NAME = "Dash"
