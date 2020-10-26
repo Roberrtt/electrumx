@@ -1237,6 +1237,7 @@ class Dash(Coin):
 
 
 class DashTestnet(Dash):
+    NAME = "Dash"
     SHORTNAME = "tDASH"
     NET = "testnet"
     XPUB_VERBYTES = bytes.fromhex("3a805837")
@@ -1258,6 +1259,7 @@ class DashTestnet(Dash):
 
 
 class DashRegtest(DashTestnet):
+    NAME = "Dash"
     NET = "regtest"
     GENESIS_HASH = ('000008ca1832a4baf228eb1553c03d3a'
                     '2c8e02399550dd6ea8d65cec3ef23d2e')
