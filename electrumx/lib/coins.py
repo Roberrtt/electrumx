@@ -3890,7 +3890,8 @@ class Quebecoin(AuxPowMixin, Coin):
     REORG_LIMIT = 2000
     RPC_PORT = 10890
     
- class Qtum(Coin):
+    
+class Qtum(Coin):
     NAME = "Qtum"
     SHORTNAME = "Qtum"
     NET = "mainnet"
@@ -3959,8 +3960,9 @@ class Quebecoin(AuxPowMixin, Coin):
             script = ScriptPubKey.P2PKH_script(hash160(pubkey))
 
         return sha256(script).digest()[:HASHX_LEN]
-
- class QtumTestnet(Qtum):
+      
+      
+class QtumTestnet(Qtum):
     NET = "testnet"
     XPUB_VERBYTES = bytes.fromhex("043587CF")
     XPRV_VERBYTES = bytes.fromhex("04358394")
@@ -3974,7 +3976,7 @@ class Quebecoin(AuxPowMixin, Coin):
     RPC_PORT = 13889
     
     
- class QtumRegtest(QtumTestnet):
+class QtumRegtest(QtumTestnet):
     NET = "regtest"
     GENESIS_HASH = '665ed5b402ac0b44efc37d8926332994363e8a7278b7ee9a58fb972efadae943'
     PEERS = []
